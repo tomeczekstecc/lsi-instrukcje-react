@@ -5,7 +5,6 @@ export const Wrapper = styled.nav`
 `;
 export const LisAboutWrapper = styled.div`
   visibility: ${(props) => (props.showAboutLi ? null : 'hidden')};
-
   position: absolute;
   margin-top: 8px;
   border: 1px solid lightgray;
@@ -60,6 +59,5 @@ export const Ul = styled.ul`
   justify-content: space-between;
 `;
 export const Img = styled.img`
-
   height: 26px;
 `;

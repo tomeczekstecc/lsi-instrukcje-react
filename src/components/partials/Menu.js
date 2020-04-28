@@ -17,7 +17,6 @@ const Menu = (props) => {
   const [showPdfLi, setShowPdfLi] = useState(false);
   const [showFilmsLi, setShowFilmsLi] = useState(false);
 
-
   return (
     <>
       <Wrapper>
@@ -34,7 +33,11 @@ const Menu = (props) => {
                 </LisPdfWrapper>
               </div>
               <Img
-                onClick={() => setShowPdfLi((prev) => !prev)}
+                onClick={() => {
+                  setShowPdfLi((prev) => !prev);
+                  setShowAboutLi(false);
+                  setShowFilmsLi(false);
+                }}
                 style={style.img}
                 src={caretDown}
                 alt='caretDown'
@@ -50,7 +53,11 @@ const Menu = (props) => {
                 </LisFilmsWrapper>
               </div>
               <Img
-                onClick={() => setShowFilmsLi((prev) => !prev)}
+                onClick={() => {
+                  setShowFilmsLi((prev) => !prev);
+                  setShowAboutLi(false);
+                  setShowPdfLi(false);
+                }}
                 style={style.img}
                 src={caretDown}
                 alt='caretDown'
@@ -71,7 +78,11 @@ const Menu = (props) => {
                 </LisAboutWrapper>{' '}
               </div>
               <Img
-                onClick={() => setShowAboutLi((prev) => !prev)}
+                onClick={() => {
+                  setShowAboutLi((prev) => !prev);
+                  setShowPdfLi(false);
+                  setShowFilmsLi(false);
+                }}
                 style={style.img}
                 src={caretDown}
                 alt='caretDown'
