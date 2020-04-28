@@ -1,7 +1,46 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
-  background-color: steelblue;
+  background-color: #007bff;
+`;
+export const LisAboutWrapper = styled.div`
+  visibility: ${(props) => (props.showAboutLi ? null : 'hidden')};
+
+  position: absolute;
+  margin-top: 8px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color: #000 !important;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  width: 250px;
+`;
+export const LisPdfWrapper = styled.div`
+  visibility: ${(props) => (props.showPdfLi ? null : 'hidden')};
+
+  position: absolute;
+  margin-top: 8px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color: #000 !important;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  width: 250px;
+`;
+export const LisFilmsWrapper = styled.div`
+  visibility: ${(props) => (props.showFilmsLi ? null : 'hidden')};
+
+  position: absolute;
+  margin-top: 8px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color: #000 !important;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  width: 250px;
 `;
 
 export const Container = styled.div`
@@ -15,9 +54,12 @@ export const Container = styled.div`
 `;
 
 export const Ul = styled.ul`
-         cursor: pointer;
-         list-style-type: none;
-         display: flex;
-         justify-content: space-between;
+  cursor: pointer;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+`;
+export const Img = styled.img`
 
-       `;
+  height: 26px;
+`;

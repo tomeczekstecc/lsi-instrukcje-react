@@ -23,6 +23,18 @@ ul li{
   margin-right: 20px;
 }
 
-ul li:hover{
+ul>li:hover{
  color: #fff
+}
+
+img:hover{
+  transform: scale(1.1);
+}
+
+.liWrapper:hover{
+  background-color: rgb(235, 235, 235);
+}
+
+.logo{
+  color:#fff
 }
