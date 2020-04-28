@@ -9,8 +9,8 @@ const Menu = (props) => {
         <Container>
           <div className='logo'>LSI instrukcje</div>
           <Ul className='primary-menu'>
-            <li style = {{}}>Instrukcje pdf</li>
-            <li> Filmy instruktażowe</li>
+            <li style = {{}}>PDF</li>
+            <li> Filmy</li>
             <li>Archiwum</li>
           </Ul>
 

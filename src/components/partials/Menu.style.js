@@ -7,16 +7,17 @@ export const Wrapper = styled.nav`
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 1200px;
-padding: 1.8rem;
-  color: white;
+  padding: 1.8rem;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: space-between;
-font-size: 1.3rem
+  font-size: 1.3rem;
 `;
 
 export const Ul = styled.ul`
-  cursor: pointer;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-`;
+         cursor: pointer;
+         list-style-type: none;
+         display: flex;
+         justify-content: space-between;
+
+       `;
