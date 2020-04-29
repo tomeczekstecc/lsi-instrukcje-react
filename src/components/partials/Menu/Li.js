@@ -1,6 +1,6 @@
 import React from 'react';
 import { DropdownItem } from './Li.style';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Li = (props) => {
   return (
@@ -10,7 +10,7 @@ const Li = (props) => {
   );
 };
 
-Li.propTypes = {};
+// Li.propTypes = {};
 
 const style = {
   liWrapper: {

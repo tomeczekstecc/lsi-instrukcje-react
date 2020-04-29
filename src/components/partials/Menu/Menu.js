@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState} from 'react';
+// import PropTypes from 'prop-types';
 import {
   Wrapper,
   LisAboutWrapper,
@@ -8,21 +8,31 @@ import {
   Container,
   Ul,
   Img,
+  MenuButton,
 } from './Menu.style';
-import caretDown from '../../assets/svg/caretDown.svg';
-import Li from '../partials/Li';
+import caretDown from '../../../assets/svg/caretDown.svg';
+import logoMenu from '../../../assets/svg/logoMenu.svg';
+import Li from './Li';
 
-const Menu = (props) => {
+const Menu = () => {
   const [showAboutLi, setShowAboutLi] = useState(false);
   const [showPdfLi, setShowPdfLi] = useState(false);
   const [showFilmsLi, setShowFilmsLi] = useState(false);
+  const [show, setShow] = useState(true);
 
   return (
     <>
       <Wrapper>
-        <Container>
+        {' '}
+        <MenuButton
+          id='logoMenu'
+          onClick={() => setShow((prev) => !prev)}
+          src={logoMenu}
+          alt=''
+        />
+        <Container show={show}>
           <div className='logo'>LSI instrukcje</div>
-          <Ul className='primary-menu'>
+          <Ul show={show} className='primary-menu'>
             <li style={style.li}>
               <div style={style.div}>
                 PDF
@@ -64,10 +74,18 @@ const Menu = (props) => {
               />{' '}
             </li>
 
-            <li>Archiwum</li>
+            <li
+              onClick={() => {
+                setShowAboutLi(false);
+                setShowPdfLi(false);
+                setShowFilmsLi(false);
+              }}
+            >
+              Archiwum
+            </li>
           </Ul>
 
-          <Ul className='secondary-menu'>
+          <Ul show={show} className='secondary-menu'>
             <li style={style.li}>
               <div style={style.div}>
                 O LSI
@@ -88,7 +106,15 @@ const Menu = (props) => {
                 alt='caretDown'
               />{' '}
             </li>
-            <li>Kontakt</li>
+            <li
+              onClick={() => {
+                setShowAboutLi(false);
+                setShowPdfLi(false);
+                setShowFilmsLi(false);
+              }}
+            >
+              Kontakt
+            </li>
           </Ul>
         </Container>
       </Wrapper>
@@ -96,9 +122,9 @@ const Menu = (props) => {
   );
 };
 
-Menu.defaultProps = {};
+// Menu.defaultProps = {};
 
-Menu.propTypes = {};
+// Menu.propTypes = {};
 
 const style = {
   li: {
