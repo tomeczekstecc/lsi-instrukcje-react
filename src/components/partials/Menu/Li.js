@@ -15,6 +15,8 @@ const Li = (props) => {
 const style = {
   liWrapper: {
     borderBottom: '1px solid lightgray',
+    width:'230px'
+
   },
 };
 

@@ -1,10 +1,10 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
+import Search from './Search';
 import {
   Wrapper,
   LisAboutWrapper,
-  LisPdfWrapper,
-  LisFilmsWrapper,
   Container,
   Ul,
   Img,
@@ -12,13 +12,17 @@ import {
 } from './Menu.style';
 import caretDown from '../../../assets/svg/caretDown.svg';
 import logoMenu from '../../../assets/svg/logoMenu.svg';
+import pdf from '../../../assets/svg/pdf.svg';
+
 import Li from './Li';
 
 const Menu = () => {
   const [showAboutLi, setShowAboutLi] = useState(false);
-  const [showPdfLi, setShowPdfLi] = useState(false);
-  const [showFilmsLi, setShowFilmsLi] = useState(false);
   const [show, setShow] = useState(true);
+
+  const resetLinks = () => {
+    setShowAboutLi(false);
+  };
 
   return (
     <>
@@ -33,56 +37,26 @@ const Menu = () => {
         <Container show={show}>
           <div className='logo'>LSI instrukcje</div>
           <Ul show={show} className='primary-menu'>
-            <li style={style.li}>
-              <div style={style.div}>
-                PDF
-                <LisPdfWrapper showPdfLi={showPdfLi}>
-                  <Li>Dla Operatora</Li>
-                  <Li>Dla Beneficjenta</Li>
-                  <Li>Instrukcje na rpo.slaskie.pl</Li>
-                </LisPdfWrapper>
-              </div>
-              <Img
-                onClick={() => {
-                  setShowPdfLi((prev) => !prev);
-                  setShowAboutLi(false);
-                  setShowFilmsLi(false);
-                }}
-                style={style.img}
-                src={caretDown}
-                alt='caretDown'
-              />{' '}
-            </li>
-            <li style={style.li}>
-              <div style={style.div}>
-                Filmy
-                <LisFilmsWrapper showFilmsLi={showFilmsLi}>
-                  <Li>Dla Operatora</Li>
-                  <Li>Dla Beneficjenta</Li>
-                  <Li>KanaLSI na YouTube</Li>
-                </LisFilmsWrapper>
-              </div>
-              <Img
-                onClick={() => {
-                  setShowFilmsLi((prev) => !prev);
-                  setShowAboutLi(false);
-                  setShowPdfLi(false);
-                }}
-                style={style.img}
-                src={caretDown}
-                alt='caretDown'
-              />{' '}
-            </li>
+            <Link onClick={resetLinks} to='/'>
+              <span className='linkName'>PDF</span>
+              <span className='linkSvg'>
+                <img src={pdf} alt='document' />
+              </span>
+            </Link>
 
-            <li
-              onClick={() => {
-                setShowAboutLi(false);
-                setShowPdfLi(false);
-                setShowFilmsLi(false);
-              }}
-            >
-              Archiwum
-            </li>
+            <Link onClick={resetLinks} Link to='films'>
+              Filmy
+            </Link>
+
+            <Link to='archive'>
+              <li
+                onClick={() => {
+                  setShowAboutLi(false);
+                }}
+              >
+                Archiwum
+              </li>
+            </Link>
           </Ul>
 
           <Ul show={show} className='secondary-menu'>
@@ -90,31 +64,53 @@ const Menu = () => {
               <div style={style.div}>
                 O LSI
                 <LisAboutWrapper showAboutLi={showAboutLi}>
-                  <Li>O LSI 2014-2020</Li>
-                  <Li>Instrukcje na Youtube</Li>
-                  <Li>LSI na rpo.slaskie.pl</Li>
+                  <Link onClick={resetLinks} to='about'>
+                    {' '}
+                    <Li>O LSI 2014-2020</Li>
+                  </Link>
+                  <a
+                    onClick={resetLinks}
+                    href='https://www.youtube.com/channel/UCOLRaGQOE5gQfewv28DMNfQ'
+                    target='_blank'
+                  >
+                    <Li>Instrukcje na Youtube</Li>
+                  </a>
+                  <a
+                    onClick={resetLinks}
+                    target='_blank'
+                    href='https://rpo.slaskie.pl/repo/?unit=4&category=9'
+                  >
+                    <Li>Instrukcje na rpo.slaskie.pl</Li>
+                  </a>
+                  <a
+                    onClick={resetLinks}
+                    target='_blank'
+                    href='https://rpo.slaskie.pl/szukaj/?q=lsi'
+                  >
+                    {' '}
+                    <Li>LSI na rpo.slaskie.pl</Li>
+                  </a>
                 </LisAboutWrapper>{' '}
               </div>
               <Img
                 onClick={() => {
                   setShowAboutLi((prev) => !prev);
-                  setShowPdfLi(false);
-                  setShowFilmsLi(false);
                 }}
                 style={style.img}
                 src={caretDown}
                 alt='caretDown'
               />{' '}
             </li>
-            <li
-              onClick={() => {
-                setShowAboutLi(false);
-                setShowPdfLi(false);
-                setShowFilmsLi(false);
-              }}
-            >
-              Kontakt
-            </li>
+            <Link to='contact'>
+              <li
+                onClick={() => {
+                  setShowAboutLi(false);
+                }}
+              >
+                Kontakt
+              </li>
+            </Link>
+            <Search />
           </Ul>
         </Container>
       </Wrapper>

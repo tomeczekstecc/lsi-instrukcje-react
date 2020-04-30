@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 
 *,
 body {
@@ -9,7 +10,8 @@ body {
     sans-serif;
   font-family: 'Lato',
     sans-serif;
-
+  font-family: 'Baloo Tamma 2',
+    cursive;
 
 }
 
@@ -21,30 +23,79 @@ body {
 
 }
 
-ul li {
-  margin-right: 20px;
+li,
+a {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.75)
 }
 
-ul>li:hover {
+li:hover {
   color: #fff
 }
 
+ul img {
+  transform: scale(.7);
+}
+
 img:hover {
-  transform: scale(1.1);
+  transform: scale(.75);
+  cursor: pointer;
 }
 
 .liWrapper:hover {
   background-color: rgb(235, 235, 235);
 }
 
-.logo{
+.logo {
   color: #fff;
   font-weight: 700;
   font-size: 1.6rem;
 }
 
+input::placeholder {
+
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+input {
+  transition: width 2s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
 @media (max-width: 690px) {
   .logo {
-    margin:0 auto;
+    margin: 0 auto;
+    margin-bottom: -20px;
+    margin-top: -15px;
+  }
+.primary-menu, .secondary-menu{
+  display: inline;
+}
+  .linkName {
+    display: none
+  }
+
+  #search-container{
+    display: none
+  }
+ul, li{
+  display: inline;
+}
+}
+
+
+@media (min-width: 691px) {
+  .linkSvg {
+    display: none;
+    transform: scale(.8);
   }
 }
