@@ -9,10 +9,15 @@ import {
   Ul,
   Img,
   MenuButton,
+  Logo,
 } from './Menu.style';
 import caretDown from '../../../assets/svg/caretDown.svg';
 import logoMenu from '../../../assets/svg/logoMenu.svg';
 import pdf from '../../../assets/svg/pdf.svg';
+import film from '../../../assets/svg/film.svg';
+import archive from '../../../assets/svg/archive.svg';
+import about from '../../../assets/svg/about.svg';
+import contact from '../../../assets/svg/contact.svg';
 
 import Li from './Li';
 
@@ -35,64 +40,79 @@ const Menu = () => {
           alt=''
         />
         <Container show={show}>
-          <div className='logo'>LSI instrukcje</div>
+          <Logo className='logo'>LSI instrukcje</Logo>
           <Ul show={show} className='primary-menu'>
-            <Link onClick={resetLinks} to='/'>
-              <span className='linkName'>PDF</span>
-              <span className='linkSvg'>
-                <img src={pdf} alt='document' />
-              </span>
-            </Link>
-
-            <Link onClick={resetLinks} Link to='films'>
-              Filmy
-            </Link>
-
-            <Link to='archive'>
-              <li
-                onClick={() => {
-                  setShowAboutLi(false);
-                }}
-              >
-                Archiwum
-              </li>
-            </Link>
+            <li>
+              <Link onClick={resetLinks} to='/'>
+                <span className='linkName'>PDF</span>
+                <span className='linkSvg'>
+                  <img src={pdf} alt='document' />
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link onClick={resetLinks} to='films'>
+                <span className='linkName'>Filmy</span>
+                <span className='linkSvg'>
+                  <img src={film} alt='document' />
+                </span>
+              </Link>
+            </li>{' '}
+            <li
+              title='archiwum'
+              onClick={() => {
+                setShowAboutLi(false);
+              }}
+            >
+              <Link to='archive'>
+                <span className='linkName'>Archiwum</span>
+                <span className='linkSvg'>
+                  <img src={archive} alt='document' />
+                </span>
+              </Link>{' '}
+            </li>
           </Ul>
 
           <Ul show={show} className='secondary-menu'>
             <li style={style.li}>
               <div style={style.div}>
-                O LSI
-                <LisAboutWrapper showAboutLi={showAboutLi}>
+                <span className='linkName'>O LSI</span>
+                <span className='linkSvg'>
+                  <img src={about} alt='document' />
+                </span>
+
+                <LisAboutWrapper id="lisAboutWrapper" showAboutLi={showAboutLi}>
                   <Link onClick={resetLinks} to='about'>
                     {' '}
                     <Li>O LSI 2014-2020</Li>
                   </Link>
-                  <a
-                    onClick={resetLinks}
-                    href='https://www.youtube.com/channel/UCOLRaGQOE5gQfewv28DMNfQ'
-                    target='_blank'
-                  >
-                    <Li>Instrukcje na Youtube</Li>
-                  </a>
-                  <a
-                    onClick={resetLinks}
-                    target='_blank'
-                    href='https://rpo.slaskie.pl/repo/?unit=4&category=9'
-                  >
-                    <Li>Instrukcje na rpo.slaskie.pl</Li>
-                  </a>
-                  <a
-                    onClick={resetLinks}
-                    target='_blank'
-                    href='https://rpo.slaskie.pl/szukaj/?q=lsi'
-                  >
-                    {' '}
-                    <Li>LSI na rpo.slaskie.pl</Li>
-                  </a>
+
+                    <a
+                      onClick={resetLinks}
+                      href='https://www.youtube.com/channel/UCOLRaGQOE5gQfewv28DMNfQ'
+                      target='_blank'
+                    >
+                      <Li>Instrukcje na Youtube</Li>
+                    </a>
+                    <a
+                      onClick={resetLinks}
+                      target='_blank'
+                      href='https://rpo.slaskie.pl/repo/?unit=4&category=9'
+                    >
+                      <Li>Instrukcje na rpo.slaskie.pl</Li>
+                    </a>
+                    <a
+                      onClick={resetLinks}
+                      target='_blank'
+                      href='https://rpo.slaskie.pl/szukaj/?q=lsi'
+                    >
+                      {' '}
+                      <Li>LSI na rpo.slaskie.pl</Li>
+                    </a>
+
                 </LisAboutWrapper>{' '}
               </div>
-              <Img
+              <Img id="caret"
                 onClick={() => {
                   setShowAboutLi((prev) => !prev);
                 }}
@@ -107,7 +127,10 @@ const Menu = () => {
                   setShowAboutLi(false);
                 }}
               >
-                Kontakt
+                <span className='linkName'>Kontakt</span>
+                <span className='linkSvg'>
+                  <img src={contact} alt='document' />
+                </span>
               </li>
             </Link>
             <Search />

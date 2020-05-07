@@ -38,10 +38,7 @@ ul img {
   transform: scale(.7);
 }
 
-img:hover {
-  transform: scale(.75);
-  cursor: pointer;
-}
+
 
 .liWrapper:hover {
   background-color: rgb(235, 235, 235);
@@ -53,49 +50,78 @@ img:hover {
   font-size: 1.6rem;
 }
 
+#caret {
+
+  margin-top: 3px;
+}
+
 input::placeholder {
-
-
+  line-height: 1.5;
+  display: flex;
   color: rgba(255, 255, 255, 0.45);
 }
 
-input {
-  transition: width 2s ease;
-}
 
 a {
   text-decoration: none;
+
 }
 
+@media (max-width: 860px) {
 
+  li,
+  a {
+    margin-right: 3px;
+    margin-left: 3px;
 
+  }
 
-
-@media (max-width: 690px) {
   .logo {
     margin: 0 auto;
     margin-bottom: -20px;
     margin-top: -15px;
+    display: none;
   }
-.primary-menu, .secondary-menu{
-  display: inline;
-}
+
+  .primary-menu,
+  .secondary-menu {
+    display: inline;
+  }
+
   .linkName {
     display: none
   }
 
-  #search-container{
+  #search-container {
     display: none
   }
-ul, li{
-  display: inline;
-}
+
+  #lisAboutWrapper {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+  }
+
+  #caret {
+    margin-left: -15px;
+    margin-top: 10px;
+  }
+
 }
 
 
-@media (min-width: 691px) {
+@media (min-width: 861px) {
   .linkSvg {
     display: none;
     transform: scale(.8);
+  }
+
+  ul {
+    display: flex !important;
+  }
+
+
+  #logoMenu {
+    display: none;
   }
 }
