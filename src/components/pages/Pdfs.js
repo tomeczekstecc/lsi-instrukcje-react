@@ -28,12 +28,22 @@ const Pdfs = () => {
     .map((item, i) => <Card cardData={item} key={i} />);
 
 
-return loading ? <Spinner/> : <Wrapper id='wrapper'>
-      <h1 className='title'>Operator</h1>
-      <div className='type-wrapper'>{cardsOper}</div>
-      <h1 className='title'>Beneficjent</h1>
-      <div className='type-wrapper'> {cardsBen}</div>
-    </Wrapper>
+return loading ? (
+  <Spinner />
+) : (
+  <Wrapper id='wrapper'>
+    <h1 className='title'>Operator</h1>
+    <div className='type-wrapper'>
+      {' '}
+      {cardsOper.length > 0 ? cardsOper : <h2>Jescze nie dodano instrukcji</h2>}
+    </div>
+    <h2 className='title'>Beneficjent</h2>
+    <div className='type-wrapper'>
+      {' '}
+      {cardsBen.length > 0 ? cardsBen : <h2>Jescze nie dodano instrukcji</h2>}
+    </div>
+  </Wrapper>
+);
 
 
 

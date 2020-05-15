@@ -72,7 +72,6 @@ const Menu = () => {
               </Link>{' '}
             </li>
           </Ul>
-
           <Ul show={show} className='secondary-menu'>
             <li style={style.li}>
               <div style={style.div}>
@@ -80,46 +79,42 @@ const Menu = () => {
                 <span className='linkSvg'>
                   <img src={about} alt='document' />
                 </span>
-
-                <LisAboutWrapper id="lisAboutWrapper" showAboutLi={showAboutLi}>
+                <LisAboutWrapper id='lisAboutWrapper' showAboutLi={showAboutLi}>
                   <Link onClick={resetLinks} to='about'>
-                    {' '}
                     <Li>O LSI 2014-2020</Li>
                   </Link>
-
-                    <a
-                      onClick={resetLinks}
-                      href='https://www.youtube.com/channel/UCOLRaGQOE5gQfewv28DMNfQ'
-                      target='_blank'
-                    >
-                      <Li>Instrukcje na Youtube</Li>
-                    </a>
-                    <a
-                      onClick={resetLinks}
-                      target='_blank'
-                      href='https://rpo.slaskie.pl/repo/?unit=4&category=9'
-                    >
-                      <Li>Instrukcje na rpo.slaskie.pl</Li>
-                    </a>
-                    <a
-                      onClick={resetLinks}
-                      target='_blank'
-                      href='https://rpo.slaskie.pl/szukaj/?q=lsi'
-                    >
-                      {' '}
-                      <Li>LSI na rpo.slaskie.pl</Li>
-                    </a>
-
-                </LisAboutWrapper>{' '}
+                  <a
+                    onClick={resetLinks}
+                    href='https://www.youtube.com/channel/UCOLRaGQOE5gQfewv28DMNfQ'
+                    target='_blank'
+                  >
+                    <Li>Instrukcje na Youtube</Li>
+                  </a>
+                  <a
+                    onClick={resetLinks}
+                    target='_blank'
+                    href='https://rpo.slaskie.pl/repo/?unit=4&category=9'
+                  >
+                    <Li>Instrukcje na rpo.slaskie.pl</Li>
+                  </a>
+                  <a
+                    onClick={resetLinks}
+                    target='_blank'
+                    href='https://rpo.slaskie.pl/szukaj/?q=lsi'
+                  >
+                    <Li>LSI na rpo.slaskie.pl</Li>
+                  </a>
+                </LisAboutWrapper>
               </div>
-              <Img id="caret"
+              <Img
+                id='caret'
                 onClick={() => {
                   setShowAboutLi((prev) => !prev);
                 }}
                 style={style.img}
                 src={caretDown}
                 alt='caretDown'
-              />{' '}
+              />
             </li>
             <Link to='contact'>
               <li

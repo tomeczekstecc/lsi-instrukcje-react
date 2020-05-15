@@ -21,7 +21,7 @@ export const CardContainer = styled.div`
     display: block;
     background-color: #fff;
     border-radius: 4px;
-    transition: 400ms ease;
+    transition: 250ms ease;
   }
 
   .card-img {
